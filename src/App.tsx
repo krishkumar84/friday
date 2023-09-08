@@ -12,10 +12,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   const {unityProvider,isLoaded,loadingProgression}=useUnityContext({
-    codeUrl:'public/m.wasm.gz',
-    frameworkUrl:'public/m.framework.js.gz',
-    dataUrl:'public/m.data.gz',
-    loaderUrl:'public/m.loader.js'
+    codeUrl:'data/build.wasm',
+    frameworkUrl:'data/build.framework.js',
+    dataUrl:'data/webgl.data',
+    loaderUrl:'data/Ne.loader.js'
   })
 
   console.log(unityProvider,isLoaded,loadingProgression)
