@@ -4,27 +4,36 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Dictaphone from './Dictaphone'
 import VideoCapture from './VideoCapture'
-import { useUnityContext } from 'react-unity-webgl'
+import { Unity,useUnityContext } from 'react-unity-webgl'
 
 // import 
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const {}=useUnityContext({
-    codeUrl:'public/build/build.wasm',
-    frameworkUrl:'public/build/build.framework.js',
-    dataUrl:'public/build/webgl.data',
-    loaderUrl:'public/build/Ne.loader.js'
+  const {unityProvider,isLoaded,loadingProgression}=useUnityContext({
+    codeUrl:'public/m.wasm.gz',
+    frameworkUrl:'public/m.framework.js.gz',
+    dataUrl:'public/m.data.gz',
+    loaderUrl:'public/m.loader.js'
   })
+
+  console.log(unityProvider,isLoaded,loadingProgression)
 
   return (
     <>
       <div>
         <span>speek</span>
+        <Unity
+        unityProvider={unityProvider}
+        style={{ width: 800, height: 600 }}
+        />
 
-        <Dictaphone/>
-        <VideoCapture/>
+
+
+        {/* <Dictaphone/>
+        <VideoCapture/> */}
+
       </div>
     </>
   )
