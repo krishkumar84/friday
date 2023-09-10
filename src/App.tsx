@@ -12,7 +12,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   const {}=useUnityContext({
-    codeUrl:'public/'
+    codeUrl:'public/build/build.wasm',
+    frameworkUrl:'public/build/build.framework.js',
+    dataUrl:'public/build/webgl.data',
+    loaderUrl:'public/build/Ne.loader.js'
   })
 
   return (
