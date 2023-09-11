@@ -4,18 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Dictaphone from './Dictaphone'
 import VideoCapture from './VideoCapture'
+import { useUnityContext } from 'react-unity-webgl'
 
 // import 
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const {}=useUnityContext({
+    codeUrl:'public/'
+  })
+
   return (
     <>
       <div>
         <span>speek</span>
 
-        {/* <Dictaphone/> */}
+        <Dictaphone/>
         <VideoCapture/>
       </div>
     </>
